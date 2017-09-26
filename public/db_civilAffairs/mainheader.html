@@ -1,0 +1,117 @@
+﻿<script type="text/javascript">
+$('.wrapper').prepend('<div class="modal fade bs-example-modal-lg" id="findInBc" tabindex="1000" role="dialog" aria-labelledby="myModalLabel">'
+  +'<div class="modal-dialog modal-lg" role="document">'
+    +'<div class="modal-content">'
+      +'<div class="modal-header">'
+        +'<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>'
+        +'<h4 class="modal-title" id="myModalLabel">在区块链中查询操作记录</h4>'
+      +'</div>'
+      +'<div class="modal-body">'
+        +'请输入查询号'
+        +'<label for="basic-url">TransactionID</label>'
+        +'<div class="input-group">'
+          +'<span class="input-group-addon" id="basic-addon3" style="background-color: #f5f5f5">TransactionID</span>'
+          +'<input type="text" class="form-control" id="transactionID" aria-describedby="basic-addon3">'
+        +'</div>'
+        +'<div id="namespace"></div>'
+        +'<div id="key"></div>'
+        +'<div id="value"></div>'
+        +'<div id="bcResult"></div>'
+        +'<div id="is_delete"></div>'
+      +'</div>'
+      +'<div class="modal-footer">'
+        +'<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>'
+        +'<button type="button" class="btn btn-primary" onclick="queryTransaction()">查询</button>'
+      +'</div>'
+    +'</div>'
+  +'</div>'
++'</div>');
+</script>
+    <!-- Logo -->
+    <a class="logo">
+      <span class="logo-mini"><b>XX市精准帮扶工程区块链应用系统</b><small>-低保帮扶</small></span>
+      <span class="logo-lg"><b>XX市精准帮扶工程区块链应用系统</b><small>-低保帮扶</small></span>
+    </a>
+
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-static-top" role="navigation">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+      <!-- Navbar Right Menu -->
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <li class="notifications-menu">
+            <!-- Menu toggle button -->
+            <a href="../../index.html">
+              <span>首页</span>
+            </a>
+          </li>
+          <li class="notifications-menu">
+            <!-- Menu toggle button -->
+            <a data-toggle="modal" data-target="#findInBc">
+              <span>在区块链中查找操作记录</span>
+            </a>
+          </li>
+
+          <!-- Tasks Menu -->
+          <li class="dropdown tasks-menu">
+            <!-- Menu Toggle Button -->
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa  fa-warning (alias)"></i>
+              <span class="label label-danger">1</span>
+            </a>
+          </li>
+          <li class="dropdown notifications-menu">
+            <!-- Menu toggle button -->
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <span class="">您有1条新通知</span>
+            </a>
+          </li>
+          <!-- User Account Menu -->
+          <li class="dropdown user user-menu">
+            <!-- Menu Toggle Button -->
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <!-- The user image in the navbar-->
+              <img src="../../../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <!-- hidden-xs hides the username on small devices so only the image appears. -->
+              <span class="hidden-xs">您好，XX市民政局 理员</span><span id="headuser"></span>
+            </a>
+          </li>
+          <!-- Control Sidebar Toggle Button -->
+          <li>
+            <a href="../../dibao_login.html"><span class="">退出</span></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+<script>
+    $("#headuser").text(getCookie("civusername"));
+    function queryTransaction(){
+      var postBody = {
+          transactionID: $("#transactionID").val()
+      };
+      $.ajax({
+          type: 'POST',
+          url: 'http://localhost:3000/dbtest/query/by/transid',
+          data: postBody,
+          dataType: 'json',
+          success: function(data){        
+              //var jsonstr=JSON.stringify(data.transactionEnvelope);
+              var obj = JSON.parse(data);
+              var mainInform = obj.transactionEnvelope.payload.data.actions[0].payload.action.proposal_response_payload.extension.results.ns_rwset[0];
+              var strmainInform = JSON.stringify(obj.transactionEnvelope.payload.data.actions[0].payload.action.proposal_response_payload.extension.results.ns_rwset[0]);
+              $("#bcResult").html(mainInform); 
+              $("#namespace").html("所在智能合约名称："+mainInform.namespace); 
+              $("#key").html("区块链中键名称："+mainInform.rwset.writes[0].key);
+              $("#value").html("区块链中的值："+mainInform.rwset.writes[0].value); 
+              $("#is_delete").html("是否为删除操作："+mainInform.rwset.writes[0].is_delete); 
+              console.log(JSON.stringify(obj.transactionEnvelope.payload));
+          }
+      }).error(function(err){
+          console.log(err);
+          alert("错误："+err.responseText);
+      });
+    }
+</script>

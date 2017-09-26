@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>县平台公司</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="../../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../../bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="../../../bower_components/Ionicons/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../../dist/css/AdminLTE.css">
+  <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
+        page. However, you can choose any other skin. Make sure you
+        apply the skin class to the body tag so the changes take effect. -->
+  <link rel="stylesheet" href="../../../dist/css/skins/skin-blue.min.css">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Google Font -->
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <link rel="stylesheet" href="../../../dist/css/mycss.css">
+  <script src="../../../dist/js/myjs.js"></script>
+</head>
+<!--
+BODY TAG OPTIONS:
+=================
+Apply one or more of the following classes to get the
+desired effect
+|---------------------------------------------------------|
+| SKINS         | skin-blue                               |
+|               | skin-black                              |
+|               | skin-purple                             |
+|               | skin-yellow                             |
+|               | skin-red                                |
+|               | skin-green                              |
+|---------------------------------------------------------|
+|LAYOUT OPTIONS | fixed                                   |
+|               | layout-boxed                            |
+|               | layout-top-nav                          |
+|               | sidebar-collapse                        |
+|               | sidebar-mini                            |
+|---------------------------------------------------------|
+-->
+<body class="hold-transition skin-blue sidebar-mini">
+<!-- Modal -->
+<div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">募资结构详情</h4>
+      </div>
+      <div class="modal-body">
+
+      <div class="box">
+        <div class="box-header with-border">
+          <h3 class="box-title">
+            基本信息
+          </h3>
+          <!-- /.box-tools -->
+        </div>
+        <div class="box-body">
+          <form class="form-horizontal">
+            <div class="form-group form-group-sm">
+              <label for="pName" class="col-sm-2 control-label">项目编号：</label>
+              <div class="col-sm-2">
+                  <p class="form-control-static" id="projectId"></p>
+              </div>
+            </div>
+            <div class="form-group form-group-sm">
+              <label for="inputPassword3" class="col-sm-2 control-label">有效期：</label>
+                <div class="col-sm-4">
+                  <div class="input-group">
+                    <input type="text" class="form-control" aria-describedby="basic-addon1" value="2016-01-01" readonly>
+                    <span class="input-group-addon" id="basic-addon1" style="background-color: #f7f7f9;">至</span>
+                    <input type="text" class="form-control" aria-describedby="basic-addon1" value="2017-01-01" readonly>
+                  </div>
+               </div>
+            </div>
+            <div class="form-group form-group-sm">
+              <label for="pName" class="col-sm-2 control-label">计划募资总金额：</label>
+              <div class="col-sm-2">
+                <div class="input-group">
+                  <input type="text" class="form-control" id="totalMoney" readonly>
+                  <span class="input-group-addon" style="background-color: #f7f7f9;">亿元</span>
+                </div>
+              </div>
+            </div>
+            <div class="form-group form-group-sm">
+              <label for="pAddress" class="col-sm-2 control-label">募资第一顺位：</label>
+              <div class="col-sm-3">                
+                <select class="form-control" name="uUnits" readonly>
+                  <option selected="selected" value="县平台公司">县平台公司</option>
+                </select>
+              </div>
+              <label for="CInvestment" class="col-sm-1 control-label">募资比例：</label>
+              <div class="col-sm-2">
+                <div class="input-group">
+                  <input type="text" class="form-control" id="prority1Rate" value="4" readonly>
+                  <span class="input-group-addon" style="background-color: #f7f7f9;">%</span>
+                </div>
+              </div>
+              <label for="CInvestment" class="col-sm-2 control-label">募资金额：</label>
+              <div class="col-sm-2">
+                <div class="input-group">
+                  <input type="text" class="form-control" id="prority1money" value="" readonly>
+                  <span class="input-group-addon" style="background-color: #f7f7f9;">亿</span>
+                </div>
+              </div>
+            </div>
+            <div class="form-group form-group-sm">
+              <label for="pAddress" class="col-sm-2 control-label">募资第二顺位：</label>
+              <div class="col-sm-3">                
+                <select class="form-control" name="uUnits" readonly>
+                  <option selected="selected" value="省基金公司">省基金公司</option>
+                </select>
+              </div>
+              <label for="CInvestment" class="col-sm-1 control-label">募资比例：</label>
+              <div class="col-sm-2">
+                <div class="input-group">
+                  <input type="text" class="form-control" id="prority2Rate" value="6" readonly>
+                  <span class="input-group-addon" style="background-color: #f7f7f9;">%</span>
+                </div>
+              </div>
+              <label for="CInvestment" class="col-sm-2 control-label">募资金额：</label>
+              <div class="col-sm-2">
+                <div class="input-group">
+                  <input type="text" class="form-control" id="prority2money" value="0.12" readonly>
+                  <span class="input-group-addon" style="background-color: #f7f7f9;">亿</span>
+                </div>
+              </div>
+            </div>
+            <div class="form-group form-group-sm">
+              <label for="pAddress" class="col-sm-2 control-label">募资第三顺位：</label>
+              <div class="col-sm-3">                
+                <select class="form-control" name="uUnits" readonly>
+                  <option selected="selected" value="工商银行（华能信托）">工商银</option>
+                </select>
+              </div>
+              <label for="CInvestment" class="col-sm-1 control-label">募资比例：</label>
+              <div class="col-sm-2">
+                <div class="input-group">
+                  <input type="text" class="form-control" id="prority3Rate" value="90" readonly>
+                  <span class="input-group-addon" style="background-color: #f7f7f9;">%</span>
+                </div>
+              </div>
+              <label for="CInvestment" class="col-sm-2 control-label">募资金额：</label>
+              <div class="col-sm-2">
+                <div class="input-group">
+                  <input type="text" class="form-control" id="prority3money" value="1.8" readonly>
+                  <span class="input-group-addon" style="background-color: #f7f7f9;">亿</span>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="form-group form-group-sm">
+              <label for="wDOFunds" class="col-sm-2 control-label">上传资料文件：</label>
+              <div class="col-sm-10">                
+                <div class="form-group form-group-sm"><!--开始显示一行上传资料文件-->
+                  <label for="sFDescription" class="col-sm-3 control-label"><a class="pull-left">201612211648123.pdf</a></label>
+                  <div class="col-sm-6">
+                    <span>募资文件1</span>
+                  </div>
+                </div> 
+                <br><!--结束显示一行上传资料文件-->
+                <div class="form-group form-group-sm">
+                  <label for="sFDescription" class="col-md-3 control-label"><a class="pull-left">201612211648134.jpg</a></label>
+                  <div class="col-sm-6">
+                    <span>募资文件2</span>
+                  </div>              
+                </div> 
+              </div>
+            </div>  
+            <div class="form-group form-group-sm">
+              <label for="pAddress" class="col-sm-2 control-label">备注：</label>
+              <div class="col-sm-9">                
+                <textarea class="form-control" name="uUnits" rows="3">
+                </textarea>
+              </div>
+            </div>
+            <div class="form-group form-group-sm">
+              <div class="col-sm-offset-3 col-sm-2">
+                <a class="btn btn-info" id="" onclick="agree();" data-dismiss="modal" style="display: block;">同意认缴</a>
+              </div>
+              <div class="col-sm-offset-1 col-sm-2">
+                <a class="btn btn-danger" id="" onclick="reject();" data-dismiss="modal" style="display: block;">拒绝认缴</a>
+              </div>
+            </div> 
+          </form>
+        </div>
+        <!-- /.box-body -->
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="wrapper">
+
+  <!-- Main Header -->
+  <header class="main-header">
+
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        首页
+        <small>->资金认缴</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+        <li class="active">Here</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content container-fluid">
+
+      <!--------------------------
+        | Your Page Content Here |
+        -------------------------->
+      <div class="box">
+        <div class="box-header with-border">
+          <h3 class="box-title">资金待认缴记录</h3>
+          <!-- /.box-tools -->
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+            <form class="form-horizontal">
+            </form>
+              <table class="table table-hover c">
+                <tbody id="allRecord"><tr>
+                  <th>有效期</th>
+                  <th>项目编号</th>
+                  <th>计划募资总金额（亿）</th>
+                  <th>己方出资额度（亿）</th>
+                  <th>出资比例</th>
+                  <th>状态</th>
+                  <th>操作</th>
+                </tr>
+                <tr>
+                  <td>2017-01-01~2018-01-01</td>
+                  <td>石门乡乡道改造</td>
+                  <td>1.73</td>
+                  <td>0.173</td>
+                  <td>10%</td>
+                  <td>待认缴</td>
+                  <td><a class="btn btn-info" data-toggle="modal" data-target="#myModal">查看详情及处理</a></td>
+                </tr>
+              </tbody>
+            </table>
+         <span style="display: none;" id="storeId"></span>
+        </div>
+        <!-- /.box-body -->
+      </div>
+      <!-- /.box -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Main Footer -->
+  <script type="text/javascript">
+    mainFooter();
+  </script>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Create the tabs -->
+    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+      <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+      <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <!-- Settings tab content -->
+      <div class="tab-pane" id="control-sidebar-settings-tab">
+        <form method="post">
+          <h3 class="control-sidebar-heading">General Settings</h3>
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Report panel usage
+              <input type="checkbox" class="pull-right" checked>
+            </label>
+
+            <p>
+              Some information about this general settings option
+            </p>
+          </div>
+          <!-- /.form-group -->
+        </form>
+      </div>
+      <!-- /.tab-pane -->
+    </div>
+  </aside>
+  <!-- /.control-sidebar -->
+  <!-- Add the sidebar's background. This div must be placed
+  immediately after the control sidebar -->
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED JS SCRIPTS -->
+
+<!-- jQuery 3 -->
+<script src="../../../bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="../../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../../dist/js/adminlte.js"></script>
+
+<!-- Optionally, you can add Slimscroll and FastClick plugins.
+     Both of these plugins are recommended to enhance the
+     user experience. -->
+  <script>
+  /*
+   *加载header、sider和footer
+  */
+    $(".main-header").load("../mainheader.html"); 
+    $(".main-sidebar").load("../mainsider.html");
+/*
+*
+*/
+$(document).ready(function(){
+        var postBody = {
+            county:"B县"
+        };
+        $.ajax({
+            type: 'POST',
+            url: 'http://localhost:3000/fmtest/countyplatform/find',
+            data: postBody,
+            dataType: 'json',
+            success: function(data){      
+              var jsonstr=JSON.stringify(data);
+              console.log(jsonstr);
+                for(var o in data){
+                  if(data[o].priority1agree == "0"){
+                    $('<tr>'
+                    +'<td>2017-01-01~2018-01-01</td>'
+                    +'<td>'+data[o].projectId+'</td>'
+                    +'<td>'+data[o].totalMoney+'</td>'
+                    +'<td>'+data[o].prority1Sum+'</td>'
+                    +'<td>'+data[o].prority1Sum/data[o].totalMoney*100+'%</td>'
+                    +'<td id="'+data[o].projectId+'1">待认缴</td>'
+                    +'<td><a class="btn btn-info" id="'+data[o].projectId+'" '
+                    +'data-toggle="modal" data-target="#myModal" onclick="add(this);">查看详情及处理</a></td>'
+                   +'</tr>').appendTo("#allRecord");                    
+                  }
+                }
+                if($("#allRecord").html()==""){
+                  $("#allRecord").html('<span style="color:#3c8dbc;">暂无需要认缴的记录。</span>');
+                }
+
+            }
+         }).error(function(err){
+            console.log(err);
+            alert("服务器忙！请稍后再尝试");
+          });
+
+    $("#result").hide();
+    $("#search").click(function(){
+      $("#result").show();
+    });
+});
+var tprojectId
+function add(obj){
+  tprojectId=obj.id
+  $("#storeId").html(tprojectId); 
+  var postBody={
+    _id:tprojectId
+  };
+    $.ajax({
+        type: 'POST',
+        url: 'http://localhost:3000/fmtest/fundstructure/findbyid',
+        data: postBody,
+        dataType: 'json',
+        success: function(data){   
+          $("#projectId").text(data[0].projectId);
+          $("#totalMoney").val(data[0].totalMoney);
+          $("#prority1Rate").val(data[0].prority1Sum/data[0].totalMoney*100);
+          $("#prority1money").val(data[0].prority1Sum);
+          $("#prority2Rate").val(data[0].prority2Sum/data[0].totalMoney*100);
+          $("#prority2money").val(data[0].prority2Sum);
+          $("#prority3Rate").val(data[0].prority3Sum/data[0].totalMoney*100);
+          $("#prority3money").val(data[0].prority3Sum);
+        }
+     }).error(function(err){
+        console.log(err);
+        alert("服务器忙！请稍后再尝试");
+      });
+}
+
+function agree(){
+ var  postBody={
+      _id:tprojectId,
+      priority1agree:"1",
+      approval:"6"
+  };
+    $.ajax({
+        type: 'POST',
+        url: 'http://localhost:3000/fmtest/countyplatform/subscribe',
+        data: postBody,
+        dataType: 'json',
+        success: function(data){      
+          var jsonstr=JSON.stringify(data);
+          console.log(jsonstr);
+          alert("已同意认缴!")
+          var id = $("#storeId").html()+"1";
+          $('#'+id).replaceWith('<td style="color:#00c0ef">已发起募资</td>');
+          var id = $("#storeId").html();
+          $('#'+id).replaceWith('<a class="btn btn-info" style="visibility:hidden;">新增计划募资结构</a>');
+          $('#'+id+1).replaceWith('<td style="color:#00c0ef">已同意认缴</td>');
+        }
+     }).error(function(err){
+        console.log(err);
+        alert("服务器忙！请稍后再尝试");
+      });
+
+}
+
+function reject(){
+ var  postBody={
+      _id:tprojectId,
+      priority1agree:"2",
+      approval:"7"
+  };
+    $.ajax({
+        type: 'POST',
+        url: 'http://localhost:3000/fmtest/countyplatform/subscribe',
+        data: postBody,
+        dataType: 'json',
+        success: function(data){      
+          var jsonstr=JSON.stringify(data);
+          console.log(jsonstr);
+          alert("已拒绝认缴!")
+          var id = $("#storeId").html()+"1";
+          var id = $("#storeId").html();
+          $('#'+id).replaceWith('<a class="btn btn-info" style="visibility:hidden;">新增计划募资结构</a>');
+          $('#'+id+1).replaceWith('<td style="color:red">已拒绝认缴</td>');
+        }
+     }).error(function(err){
+        console.log(err);
+        alert("服务器忙！请稍后再尝试");
+      });
+
+}
+  </script>
+</body>
+</html>

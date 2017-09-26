@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>集团公司</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="../../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../../bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="../../../bower_components/Ionicons/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../../dist/css/AdminLTE.css">
+  <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
+        page. However, you can choose any other skin. Make sure you
+        apply the skin class to the body tag so the changes take effect. -->
+  <link rel="stylesheet" href="../../../dist/css/skins/skin-blue.min.css">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Google Font -->
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <script src="../../../dist/js/myjs.js"></script>
+</head>
+<!--
+BODY TAG OPTIONS:
+=================
+Apply one or more of the following classes to get the
+desired effect
+|---------------------------------------------------------|
+| SKINS         | skin-blue                               |
+|               | skin-black                              |
+|               | skin-purple                             |
+|               | skin-yellow                             |
+|               | skin-red                                |
+|               | skin-green                              |
+|---------------------------------------------------------|
+|LAYOUT OPTIONS | fixed                                   |
+|               | layout-boxed                            |
+|               | layout-top-nav                          |
+|               | sidebar-collapse                        |
+|               | sidebar-mini                            |
+|---------------------------------------------------------|
+-->
+<body class="hold-transition skin-blue sidebar-mini">
+<!-- Modal -->
+<div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">基本信息</h4>
+      </div>
+      <div class="modal-body">
+        <div class="box-body">
+          <form class="form-horizontal">
+            <div class="form-group form-group-sm">
+              <label for="pNumber" class="col-sm-2 control-label">项目编号：</label>
+              <div class="col-sm-4">
+                <span class="form-plaintxt" id="pNumber">极贫-石门-001</span>
+              </div>
+              <label for="pNature" class="col-sm-2 control-label">项目性质：</label>
+              <div class="col-sm-4">
+                <span class="form-plaintxt" id="pNature">公路交通</span>
+              </div>
+            </div>
+            <div class="form-group form-group-sm">
+              <label for="pName" class="col-sm-2 control-label">项目名称：</label>
+              <div class="col-xs-4">
+                <span class="form-plaintxt" id="pName">石门乡乡道改造</span>
+              </div>
+              <label for="CInvestment" class="col-xs-2 control-label">建设投资额（亿元）：</label>
+              <div class="col-xs-4">
+                <span class="form-plaintxt" id="CInvestment">2</span>
+              </div>
+            </div>
+            <div class="form-group form-group-sm">
+              <label for="ADivisions" class="col-sm-2 control-label">市州/区县/乡镇：</label>
+              <div class="col-sm-10">
+                <span class="form-plaintxt" id="ADivisions">毕节市/威宁县/石门乡</span>
+              </div>
+            </div>
+            <div class="form-group form-group-sm">
+              <label for="pAddress" class="col-sm-2 control-label">项目地址：</label>
+              <div class="col-xs-4">
+                <span class="form-plaintxt" id="pAddress">石门乡</span>
+              </div>
+              <label for="2016_invest" class="col-sm-2 control-label">2016年（亿元）：</label>
+              <div class="col-xs-4">
+                <span class="form-plaintxt" id="2016_invest">0.6</span>
+              </div>
+            </div>
+            <div class="form-group form-group-sm">
+              <label for="uUnits" class="col-sm-2 control-label">承接单位:</label>
+              <div class="col-xs-4">
+                <span class="form-plaintxt" id="uUnits">中国第四建筑有限公司</span>
+              </div>
+              <label for="2017_invest" class="col-sm-2 control-label">2017年（亿元）：</label>
+              <div class="col-xs-4">
+                <span class="form-plaintxt" id="2017_invest">1.4</span>
+              </div>
+            </div>
+            <div class="form-group form-group-sm">
+              <label for="cLUUnit" class="col-sm-2 control-label">县级承担部门：</label>
+              <div class="col-xs-4">
+                <span class="form-plaintxt" id="cLUUnit">威宁县公路局</span>
+              </div>
+              <label for="2018_invest" class="col-sm-2 control-label">2018年（亿元）：</label>
+              <div class="col-xs-4">
+                <span class="form-plaintxt" id="2018_invest">0</span>
+              </div>
+            </div>
+            <div class="form-group form-group-sm">
+              <label for="tRDate" class="col-sm-2 control-label">任务下达日期：</label>
+              <div class="col-xs-4">
+                <span class="form-plaintxt" id="tRDate">2016年7月1日</span>
+              </div>
+              <label for="rCTime" class="col-sm-2 control-label">要求完成时间：</label>
+              <div class="col-xs-4">
+                <span class="form-plaintxt" id="rCTime">2017年12月31日</span>
+              </div>
+            </div>
+            <div class="form-group form-group-sm">
+              <label for="wDOFunds" class="col-sm-2 control-label">资金退出日期：</label>
+              <div class="col-xs-4">
+                <span class="form-plaintxt" id="wDOFunds">--</span>
+              </div>
+            </div> 
+            <div class="box-header with-border">
+              <h3 class="box-title">
+                项目信息
+              </h3>
+              <!-- /.box-tools -->
+            </div>
+            <br>
+            <div class="form-group form-group-sm">
+              <label for="bBackground" class="col-sm-2 control-label">商务背景：</label>
+              <div class="col-sm-10">
+                <span class="form-plaintxt" id="bBackground">无</span>
+              </div>
+            </div> 
+            <div class="form-group form-group-sm">
+              <label for="tInformation" class="col-sm-2 control-label">技术资料：</label>
+              <div class="col-sm-10">
+                <span class="form-plaintxt" id="tInformation">无</span>
+              </div>
+            </div> 
+            <div class="form-group form-group-sm">
+              <label for="" class="col-sm-2 control-label">其他资料：</label>          
+              <div class="col-sm-10" id="oInformation">
+                <span class="form-plaintxt" id=""><a>石门乡乡道改造项目补充说明.pdf</a></span>      
+                <span class="form-plaintxt" id="">石门乡乡道改造项目预算说明</span>
+                <br>
+                <span class="form-plaintxt" id=""><a>石门乡乡道改造项目补充说明.jpg</a></span>        
+                <span class="form-plaintxt" id="">石门乡乡道改造项目补充说明</span>
+             </div>
+            </div>  
+            <div class="form-group form-group-sm">
+              <label for="iAMeasures" class="col-sm-2 control-label">有关问题及措施：</label>
+              <div class="col-sm-10">
+                <span class="form-plaintxt" id="iAMeasures">省委督查室下达文件，要求公路局上报方案，基金公司春节前下达资金款</span>
+              </div>
+            </div> 
+            <div class="form-group form-group-sm">
+              <label for="iOSituation" class="col-sm-2 control-label">落实情况：</label>
+              <div class="col-sm-10">
+                <span class="form-plaintxt" id="iOSituation">省公路局12月20日前上报方案，脱贫公司春节前募资到位</span>
+              </div>
+            </div> 
+            <div class="box-header with-border">
+              <h3 class="box-title">
+                募资结构信息
+              </h3>
+              <!-- /.box-tools -->
+            </div>
+            <br>
+            <div class="form-group form-group-sm">
+              <label for="bBackground" class="col-sm-2 control-label">县平台公司：</label>
+              <div class="col-sm-1">
+                <span class="form-plaintxt" id="bBackground"> 出资额度：</span>
+              </div>
+              <div class="col-sm-2">
+                <span class="form-plaintxt" id="bBackground"> 80万</span>
+              </div>
+              <div class="col-sm-2">
+                <span class="form-plaintxt" id="bBackground"> 是否认缴：</span>
+              </div>
+              <div class="col-sm-2">
+                <span class="form-plaintxt" id="bBackground"> 未操作</span>
+              </div>
+            </div> 
+            <div class="form-group form-group-sm">
+              <label for="tInformation" class="col-sm-2 control-label">省脱贫基金公司：</label>
+              <div class="col-sm-1">
+                <span class="form-plaintxt" id="bBackground"> 出资额度：</span>
+              </div>
+              <div class="col-sm-2">
+                <span class="form-plaintxt" id="bBackground"> 120万</span>
+              </div>
+              <div class="col-sm-2">
+                <span class="form-plaintxt" id="bBackground"> 是否自动认缴：</span>
+              </div>
+              <div class="col-sm-2">
+                <span class="form-plaintxt" id="bBackground"> 未操作</span>
+              </div>
+            </div> 
+            <div class="form-group form-group-sm">
+              <label for="" class="col-sm-2 control-label">工商银行：</label>        
+              <div class="col-sm-1">
+                <span class="form-plaintxt" id="bBackground"> 出资额度：</span>
+              </div>
+              <div class="col-sm-2">
+                <span class="form-plaintxt" id="bBackground"> 18000万</span>
+              </div>
+              <div class="col-sm-2">
+                <span class="form-plaintxt" id="bBackground"> 是否自动认缴：</span>
+              </div>
+              <div class="col-sm-2">
+                <span class="form-plaintxt" id="bBackground"> 未操作</span>
+              </div>
+            </div>  
+            <div class="form-group form-group-sm">
+              <label for="iAMeasures" class="col-sm-2 control-label">有关问题及措施：</label>
+              <div class="col-sm-10">
+                <span class="form-plaintxt" id="iAMeasures">省委督查室下达文件，要求公路局上报方案，基金公司春节前下达资金款</span>
+              </div>
+            </div> 
+            <div class="form-group form-group-sm">
+              <label for="iOSituation" class="col-sm-2 control-label">落实情况：</label>
+              <div class="col-sm-10">
+                <span class="form-plaintxt" id="iOSituation">省公路局12月20日前上报方案，脱贫公司春节前募资到位</span>
+              </div>
+            </div> 
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="wrapper">
+
+  <!-- Main Header -->
+  <header class="main-header">
+
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        首页
+        <small>->资金管理</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+        <li class="active">Here</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content container-fluid">
+
+      <!--------------------------
+        | Your Page Content Here |
+        -------------------------->
+      <div class="box">
+        <div class="box-header with-border">
+          <h3 class="box-title">计划募资结构列表</h3>
+          <!-- /.box-tools -->
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+            <form class="form-horizontal">
+              <div class="form-group">
+                <label class="col-sm-offset-8 col-sm-2 control-label">状态：</label>
+                <div class="col-sm-2">            
+                <select class="form-control input-sm" name="uUnits">
+                  <option selected="selected" value="（全部）">（全部）</option>
+                  <option value="募集中">募集中</option>
+                  <option value="已完成">已完成</option>
+                </select>
+                </div>
+              </div>
+            </form>
+              <table class="table table-hover c">
+                <tbody id="allRecord"><tr>
+                  <th>项目编号</th>
+                  <th>项目名称</th>
+                  <th>计划募资总金额（亿）</th>
+                  <th>生成时间</th>
+                  <th>状态</th>
+                  <th>操作</th>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+        <!-- /.box-body -->
+      </div>
+      <!-- /.box -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Main Footer -->
+  <script type="text/javascript">
+    mainFooter();
+  </script>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Create the tabs -->
+    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+      <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+      <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <!-- Settings tab content -->
+      <div class="tab-pane" id="control-sidebar-settings-tab">
+        <form method="post">
+          <h3 class="control-sidebar-heading">General Settings</h3>
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Report panel usage
+              <input type="checkbox" class="pull-right" checked>
+            </label>
+
+            <p>
+              Some information about this general settings option
+            </p>
+          </div>
+          <!-- /.form-group -->
+        </form>
+      </div>
+      <!-- /.tab-pane -->
+    </div>
+  </aside>
+  <!-- /.control-sidebar -->
+  <!-- Add the sidebar's background. This div must be placed
+  immediately after the control sidebar -->
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED JS SCRIPTS -->
+
+<!-- jQuery 3 -->
+<script src="../../../bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="../../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../../dist/js/adminlte.js"></script>
+
+<!-- Optionally, you can add Slimscroll and FastClick plugins.
+     Both of these plugins are recommended to enhance the
+     user experience. -->
+  <script>
+  /*
+   *加载header、sider和footer
+  */
+    $(".main-header").load("../mainheader.html"); 
+    $(".main-sidebar").load("../mainsider.html");
+/*
+*
+*/
+$(document).ready(function(){
+        var postBody = {
+            county:"B县"
+        };
+        $.ajax({
+            type: 'POST',
+            url: 'http://localhost:3000/fmtest/groupcompany/find2',
+            data: postBody,
+            dataType: 'json',
+            success: function(data){      
+              var jsonstr=JSON.stringify(data);
+              console.log(jsonstr);
+                for(var o in data){
+                  if(data[o].approval == "5"){
+                    $('<tr>'
+                    +'<td>'+data[o]._id+'</td>'
+                    +'<td>'+data[o].projectName+'</td>'
+                    +'<td>'+data[o].totalMoney+'</td>'
+                    +'<td>2017-9-19</td>'
+                    +'<td id="'+data[o]._id+'1">募集中</td>'
+                    +'<td><a class="btn btn-info" data-toggle="modal" data-target="#myModal">查看详情</a></td>'
+                   +'</tr>').appendTo("#allRecord");                    
+                  }
+                  if(data[o].approval == "6"){
+                    $('<tr>'
+                    +'<td>'+data[o]._id+'</td>'
+                    +'<td>'+data[o].projectName+'</td>'
+                    +'<td>'+data[o].totalMoney+'</td>'
+                    +'<td>2017-9-19</td>'
+                    +'<td id="'+data[o]._id+'1">募集成功</td>'
+                    +'<td><a class="btn btn-info" data-toggle="modal" data-target="#myModal">查看详情</a></td>'
+                   +'</tr>').appendTo("#allRecord");                    
+                  }
+                  if(data[o].approval == "7"){
+                    $('<tr>'
+                    +'<td>'+data[o]._id+'</td>'
+                    +'<td>'+data[o].projectName+'</td>'
+                    +'<td>'+data[o].totalMoney+'</td>'
+                    +'<td>2017-9-19</td>'
+                    +'<td id="'+data[o]._id+'1">募集失败</td>'
+                    +'<td><a class="btn btn-info" data-toggle="modal" data-target="#myModal">查看详情</a></td>'
+                   +'</tr>').appendTo("#allRecord");                    
+                  }
+                }
+                if($("#allRecord").html()==""){
+                  $("#allRecord").html('<span style="color:#3c8dbc;">暂无项目。</span>');
+                }
+
+            }
+         }).error(function(err){
+            console.log(err);
+            alert("服务器忙！请稍后再尝试");
+          });
+
+    $("#result").hide();
+    $("#search").click(function(){
+      $("#result").show();
+    });
+});
+var tprojectId
+function add(obj){
+  tprojectId=obj.id
+  $("#storeId").html(tprojectId); 
+  var postBody={
+    _id:tprojectId
+  };
+    $.ajax({
+        type: 'POST',
+        url: 'http://localhost:3000/fmtest/findbyid',
+        data: postBody,
+        dataType: 'json',
+        success: function(data){   
+          $("#projectId").text(data._id);
+          $("#projectName").text(data.projectName);
+          $("#totalMoney").val(data.totalMoney/10000);
+        }
+     }).error(function(err){
+        console.log(err);
+        alert("服务器忙！请稍后再尝试");
+      });
+
+
+}
+
+function fundRaise(){
+ var  postBody={
+      _id:tprojectId,
+      projectId:$("#projectId").html(),
+      totalMoney:$("#totalMoney").val(),
+      prority1Id:$("#prority1Id").val(),
+      prority1Sum:parseFloat($("#prority1money").val()),
+      prority2Id:$("#prority2Id").val(),
+      prority2Sum:parseFloat($("#prority2money").val()),
+      prority3Id:$("#prority3Id").val(),
+      prority3Sum:parseFloat($("#prority3money").val()),
+  };
+    $.ajax({
+        type: 'POST',
+        url: 'http://localhost:3000/fmtest/fund/raise',
+        data: postBody,
+        dataType: 'json',
+        success: function(data){      
+          var jsonstr=JSON.stringify(data);
+          console.log(jsonstr);
+          alert("已发起募资!")
+          var id = $("#storeId").html()+"1";
+          $('#'+id).replaceWith('<td style="color:#00c0ef">已发起募资</td>');
+          var id = $("#storeId").html();
+          $('#'+id).replaceWith('<a class="btn btn-info" style="visibility:hidden;">新增计划募资结构</a>');
+
+        }
+     }).error(function(err){
+        console.log(err);
+        alert("服务器忙！请稍后再尝试");
+      });
+
+}
+  </script>
+</body>
+</html>
